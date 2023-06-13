@@ -16,6 +16,8 @@ public class MakeAppointmentPage extends Page {
     private By medicaidRadioButton = By.id("radio_program_medicaid");
     private By noneRadioButton = By.id("radio_program_none");
     private By visitDateCalendar = By.id("txt_visit_date");
+    private By commentField = By.id("txt_comment");
+    private By bookAppointmentButton = By.id("btn-book-appointment");
 
     public MakeAppointmentPage(WebDriver driver) {
         super(driver);
@@ -89,7 +91,7 @@ public class MakeAppointmentPage extends Page {
 
 
         // ----------------- SHORT IMPLEMENTATION -----------------------
-        String mOnth = "December 2023";
+        /*String mOnth = "December 2023";
         String dAy = "15";
 
         driver.findElement(visitDateCalendar).click();
@@ -103,6 +105,20 @@ public class MakeAppointmentPage extends Page {
                 driver.findElement(nextArrow).click();
             }
         }
-        driver.findElement(By.xpath("//tbody/tr/td[contains(text(), " + dAy + ")]")).click();
+        driver.findElement(By.xpath("//tbody/tr/td[contains(text(), " + dAy + ")]")).click();*/
+    }
+
+    public void fillCommentField(){
+
+        String comment = "Nunc iaculis bibendum sollicitudin. Donec sagittis enim non lorem lacinia " +
+                "gravida. Nam ultrices scelerisque turpis, in sagittis sem vulputate lobortis. Vivamus arcu arcu, " +
+                "condimentum convallis feugiat ac, congue eget ipsum. Donec eget ligula tristique, ornare nunc " +
+                "facilisis, aliquam nisl. Sed neque diam, dignissim sit amet magna ut, sollicitudin porta nisi. ";
+
+        driver.findElement(commentField).sendKeys(comment);
+    }
+
+    public void clickBookAppointmentButton(){
+        driver.findElement(bookAppointmentButton).click();
     }
 }

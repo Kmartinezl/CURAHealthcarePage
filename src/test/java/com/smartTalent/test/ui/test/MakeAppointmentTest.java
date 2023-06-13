@@ -1,5 +1,6 @@
 package com.smartTalent.test.ui.test;
 
+import com.smartTalent.test.ui.pages.AppointmentConfirmationPage;
 import com.smartTalent.test.ui.pages.HomePage;
 import com.smartTalent.test.ui.pages.LoginPage;
 import com.smartTalent.test.ui.pages.MakeAppointmentPage;
@@ -11,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.text.ParseException;
 
-public class LoginTestForm {
+public class MakeAppointmentTest {
 
     private WebDriver driver;
 
@@ -37,10 +38,15 @@ public class LoginTestForm {
         makeAppointmentPage.clickApplyCheckbox();
         makeAppointmentPage.selectMedicaidRadioButton();
         makeAppointmentPage.selectVisitDate();
+        makeAppointmentPage.fillCommentField();
+        makeAppointmentPage.clickBookAppointmentButton();
+
+        AppointmentConfirmationPage appointmentConfirmationPage = new AppointmentConfirmationPage(driver);
+        appointmentConfirmationPage.clickGoToHomepageButton();
     }
 
-   /* @After
+    @After
     public void tearDown(){
         driver.quit();
-    }*/
+    }
 }
