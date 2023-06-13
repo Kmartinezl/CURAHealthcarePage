@@ -1,4 +1,4 @@
-# CURAHealthcarePage
+# CURA Healthcare Page
 In this repository you can find the automation project I did for https://katalon-demo-cura.herokuapp.com/ as part of the Smart Talent technical test. The solution is made in Java, and integrates different tools such as Selenium, JUnit and Maven, using the Page Objet Model design pattern.
 
 In order to run the project you must make sure you have the following tools installed:
